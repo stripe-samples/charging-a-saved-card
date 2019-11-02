@@ -1,4 +1,4 @@
-# Placing a hold
+# Charging a saved card
 
 A [Sinatra](http://sinatrarb.com/) implementation.
 

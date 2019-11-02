@@ -1,4 +1,4 @@
-# Placing a hold
+# Charging a saved card
 An [Express server](http://expressjs.com) implementation
 
 ## Requirements

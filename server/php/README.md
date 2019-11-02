@@ -1,4 +1,4 @@
-# Placing a hold
+# Charging a saved card
 
 ## Requirements
 * PHP >= 7.1.3
