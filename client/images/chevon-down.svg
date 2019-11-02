@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="6px" viewBox="0 0 10 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>icon-chevron-down</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M8.49457101,0.308227687 C8.73887459,0.0639241042 9.13496896,0.0639241042 9.37927254,0.308227687 C9.62357613,0.55253127 9.62357613,0.94862564 9.37927254,1.19292922 L5.44194185,5.13025992 C5.19786417,5.3743376 4.80213606,5.3743376 4.55805837,5.13025992 L0.62072768,1.19292922 C0.376424097,0.94862564 0.376424097,0.55253127 0.62072768,0.308227687 C0.865031263,0.0639241042 1.26112563,0.0639241042 1.50542922,0.308227687 L5.00000022,3.8027987 L8.49457101,0.308227687 Z" id="path-1"></path>
+    </defs>
+    <g id="Recipes-Framework" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="payment-page-copy" transform="translate(-285.000000, -242.000000)">
+            <g id="UI-Preview" transform="translate(54.000000, 48.000000)">
+                <g id="Group-14-Copy" transform="translate(0.000000, 119.000000)">
+                    <g id="Group-4">
+                        <g id="icon-chevron-down" transform="translate(231.000000, 75.000000)">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <use id="Mask" fill="#000000" xlink:href="#path-1"></use>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

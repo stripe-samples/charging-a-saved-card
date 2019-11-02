@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Stripe Charge Card sample</title>
+    <meta name="description" content="A demo of Stripe Payment Intents" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/global.css" />
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="/script.js" defer></script>
+  </head>
+
+  <body>
+    <div class="sr-root">
+      <div class="sr-main">
+        <div class="sr-select-pm">
+          <div class="sr-combo-inputs-row">
+            <label for="pm-type">
+              Pick test card to charge off-session and see the suggested
+              recovery flow
+            </label>
+            <select class="sr-select" id="pm-type">
+              <option value="pm_card_authenticationRequired"
+                >Card fails because it requires customer authentication</option
+              >
+              <option
+                value="pm_card_chargeCustomerFail"
+                style="background-image:url(images/card-blocked.svg);width:10px;"
+                >Card fails due to insufficient funds</option
+              >
+              <option
+                value="pm_card_authenticationRequiredSetupForOffSession"
+                style="background-image:url(images/card-success.svg);"
+                >Card succeeds</option
+              >
+            </select>
+          </div>
+          <button id="submit">
+            <div class="spinner hidden"></div>
+            <span class="button-text">Charge</span>
+          </button>
+        </div>
+        <!-- View to ask customer to authenticate a specific card -->
+        <div class="sr-result requires-auth hidden">
+          <div class="sr-result-container">
+            <img
+              src="./images/card-requires-auth.svg"
+              alt="Credit card image with a warning icon"
+            />
+            <p>
+              Please authenticate your
+              <span id="card-brand"></span> card ending in
+              <span id="last4"></span> to authorize your purchase of
+              <span id="order-amount"></span>.
+            </p>
+          </div>
+          <button id="authenticate">
+            <div class="spinner hidden"></div>
+            <span class="button-text">Authenticate purchase</span>
+          </button>
+        </div>
+        <!-- View to ask for new card details -->
+        <div class="sr-result requires-pm hidden">
+          <div class="sr-result-container">
+            <img
+              src="./images/card-blocked.svg"
+              alt="Credit card image with a blocking icon"
+            />
+            <p>
+              Your card was declined, please provide a new payment method.
+            </p>
+          </div>
+          <div id="card-element"></div>
+          <div class="sr-field-error"></div>
+          <button id="update-pm">
+            <div class="spinner hidden"></div>
+            <span class="button-text">Update payment method</span>
+          </button>
+        </div>
+        <div class="sr-result code-preview hidden">
+          <div class="sr-result-container">
+            <img
+              src="./images/card-success.svg"
+              alt="Credit card image with a success icon"
+            />
+            <p>Payment completed!</p>
+          </div>
+          <pre><code><!-- Show a view of the completed PaymentIntent JSON --></code></pre>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
