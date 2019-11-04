@@ -28,7 +28,7 @@ var chargeCard = function(paymentMethod) {
 
       if (data.error && data.error === "authentication_required") {
         // Card needs to be authenticatied
-        // Reuse the card details we have to use handleCardPayment() to prompt for authentication
+        // Reuse the card details we have to use confirmCardPayment() to prompt for authentication
         showAuthenticationView(data);
       } else if (data.error) {
         // Card was declined off-session -- ask customer for a new card
@@ -94,10 +94,10 @@ var setupAuthenticationView = function(clientSecret, paymentMethod) {
     .addEventListener("click", function(evt) {
       changeLoadingState(true, "#authenticate");
 
-      // Use handleCardPayment() to ask the customer to authenticate
+      // Use confirmCardPayment() to ask the customer to authenticate
       // a previously saved card
       stripe
-        .handleCardPayment(clientSecret, {
+        .confirmCardPayment(clientSecret, {
           payment_method: paymentMethod
         })
         .then(function(stripeJsResult) {
@@ -128,23 +128,28 @@ var setupNewPaymentMethodView = function(clientSecret) {
   // Event handler to prompt a customer to enter new payment details
   document.querySelector("#update-pm").addEventListener("click", function(evt) {
     changeLoadingState(true, "#update-pm");
-    // Use handleCardPayment() to attemp to pay for the PaymentIntent with a
+    // Use confirmCardPayment() to attemp to pay for the PaymentIntent with a
     // new card (collected by the Card Element) and save it to the customer
-    stripe.handleCardPayment(clientSecret, card, {save_payment_method: true}).then(function(stripeJsResult) {
-      changeLoadingState(false, "#update-pm");
-      if (stripeJsResult.error) {
-        // Ask for new card details
-        showError(stripeJsResult.error.message);
-      } else if (
-        stripeJsResult.paymentIntent &&
-        stripeJsResult.paymentIntent.status === "succeeded"
-      ) {
-        // New card details were used to pay for the PaymentIntent
-        // There's a risk your customer will drop-off or close the browser before this callback executes
-        // We recommend handling any business-critical post-payment logic in a webhook
-        paymentIntentSucceeded(clientSecret, ".requires-pm");
-      }
-    });
+    stripe
+      .confirmCardPayment(clientSecret, {
+        payment_method: { card: card },
+        save_payment_method: true
+      })
+      .then(function(stripeJsResult) {
+        changeLoadingState(false, "#update-pm");
+        if (stripeJsResult.error) {
+          // Ask for new card details
+          showError(stripeJsResult.error.message);
+        } else if (
+          stripeJsResult.paymentIntent &&
+          stripeJsResult.paymentIntent.status === "succeeded"
+        ) {
+          // New card details were used to pay for the PaymentIntent
+          // There's a risk your customer will drop-off or close the browser before this callback executes
+          // We recommend handling any business-critical post-payment logic in a webhook
+          paymentIntentSucceeded(clientSecret, ".requires-pm");
+        }
+      });
   });
 };
 
