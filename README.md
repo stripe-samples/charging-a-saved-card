@@ -17,6 +17,23 @@ This sample uses three Stripe test cards to demonstrate the three different flow
 
 3. Card succeeds - No recovery flow needed! The payment went through.
 
+<img src="./charging-saved-card.gif" alt="A gif of selecting a card to charge" style="align:center">
+
+**Demo**
+
+See the sample [live](https://lbbjp.sse.codesandbox.io/) in test mode or [fork](https://codesandbox.io/s/stripe-sample-charging-saved-card-lbbjp) the Node implementation on CodeSandbox.
+
+Pick a test card from the dropdown to attempt to charge "off-session" on the server. The sample will present a "recovery flow" for cards that are declined or require authentication.
+
+When prompted to add a new payment method, you can use these test cards:
+
+Use the `4242424242424242` test card number with any CVC, postal code and future expiration date will succeed.
+
+Use the `4000000000003220` test card number with any CVC, postal code and future expiration date will require authentication.
+
+Read more about testing on Stripe at https://stripe.com/docs/testing.
+
+
 ## How to run locally
 
 This sample includes 5 server implementations in Node, Ruby, Python, Java, and PHP.
