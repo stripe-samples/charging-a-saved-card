@@ -17,11 +17,15 @@ This sample uses three Stripe test cards to demonstrate the three different flow
 
 3. Card succeeds - No recovery flow needed! The payment went through.
 
-<img src="./charging-saved-card.gif" alt="A gif of selecting a card to charge" style="align:center">
+Before you charge a saved card you need to collect card details and save them to a Customer. See [our docs](/docs/payments/save-and-reuse) or [sample](https://github.com/stripe-samples/saving-card-without-payment) on saving cards.
+
+<img src="./charging-saved-card-diagram.png" alt="A visual flow chart illustrating the three different flows above" style="align:center">
 
 **Demo**
 
 See the sample [live](https://lbbjp.sse.codesandbox.io/) in test mode or [fork](https://codesandbox.io/s/stripe-sample-charging-saved-card-lbbjp) the Node implementation on CodeSandbox.
+
+<img src="./charging-saved-card.gif" alt="A gif of selecting a card to charge" style="align:center">
 
 Pick a test card from the dropdown to attempt to charge "off-session" on the server. The sample will present a "recovery flow" for cards that are declined or require authentication.
 

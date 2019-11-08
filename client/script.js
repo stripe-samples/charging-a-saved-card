@@ -65,7 +65,8 @@ var setupElements = function(publicKey) {
   card.mount("#card-element");
 };
 
-document.querySelector("#submit").addEventListener("click", function(evt) {
+document.querySelector("form").addEventListener("submit", function(evt) {
+  evt.preventDefault();
   changeLoadingState(true, "#submit");
   var selectedPaymentMethod = document.querySelector("option:checked").value;
   chargeCard(selectedPaymentMethod);
