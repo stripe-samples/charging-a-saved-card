@@ -16,7 +16,7 @@
   <body>
     <div class="sr-root">
       <div class="sr-main">
-        <div class="sr-select-pm">
+        <form class="sr-select-pm">
           <div class="sr-combo-inputs-row">
             <label for="pm-type">
               Pick test card to charge off-session and see the suggested
@@ -38,11 +38,11 @@
               >
             </select>
           </div>
-          <button id="submit">
+          <button id="submit" type="submit">
             <div class="spinner hidden"></div>
             <span class="button-text">Charge</span>
           </button>
-        </div>
+        </form>
         <!-- View to ask customer to authenticate a specific card -->
         <div class="sr-result requires-auth hidden">
           <div class="sr-result-container">
