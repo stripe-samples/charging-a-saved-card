@@ -65,7 +65,7 @@ The CLI will walk you through picking your integration type, server and client l
 If you do not want to use the Stripe CLI, you can manually clone and configure the sample yourself:
 
 ```
-git clone https://github.com/stripe-samples/charging-saved-card
+git clone https://github.com/stripe-samples/charging-a-saved-card.git
 ```
 
 Copy the .env.example file into a file named .env in the folder of the server you want to use. For example:
