@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0c52e72d24adb69fb585678bad16c244",
+    "content-hash": "09b1e50ddad0aee9222e29535d820cce",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -483,16 +483,16 @@
         },
         {
             "name": "stripe/stripe-php",
-            "version": "v7.7.1",
+            "version": "v9.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stripe/stripe-php.git",
-                "reference": "2e351f7a66ae6dc2503e32e23dff275cf58376ae"
+                "reference": "e405c178c2167f568e654296ad6b20eb461761b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/2e351f7a66ae6dc2503e32e23dff275cf58376ae",
-                "reference": "2e351f7a66ae6dc2503e32e23dff275cf58376ae",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/e405c178c2167f568e654296ad6b20eb461761b5",
+                "reference": "e405c178c2167f568e654296ad6b20eb461761b5",
                 "shasum": ""
             },
             "require": {
@@ -502,11 +502,10 @@
                 "php": ">=5.6.0"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.15",
-                "php-coveralls/php-coveralls": "^2.1",
-                "phpunit/phpunit": "^5.7",
-                "squizlabs/php_codesniffer": "^3.3",
-                "symfony/process": "~3.4"
+                "friendsofphp/php-cs-fixer": "3.5.0",
+                "phpstan/phpstan": "^1.2",
+                "phpunit/phpunit": "^5.7 || ^9.0",
+                "squizlabs/php_codesniffer": "^3.3"
             },
             "type": "library",
             "extra": {
@@ -536,7 +535,11 @@
                 "payment processing",
                 "stripe"
             ],
-            "time": "2019-10-25T18:45:29+00:00"
+            "support": {
+                "issues": "https://github.com/stripe/stripe-php/issues",
+                "source": "https://github.com/stripe/stripe-php/tree/v9.0.0"
+            },
+            "time": "2022-08-02T15:47:44+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -661,5 +664,6 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
 }
