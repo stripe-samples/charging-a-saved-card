@@ -12,7 +12,7 @@
   "dependencies": {
     "body-parser": "^1.20.2",
     "dotenv": "^16.0.2",
-    "express": "^4.18.1",
+    "express": "^4.18.2",
     "stripe": "^11.16.0"
   }
 }
